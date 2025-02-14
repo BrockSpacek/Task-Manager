@@ -10,36 +10,45 @@
     
     <h1 class="text-5xl text-center font-bold"> Task Manager </h1>
 
-    <div class="mt-10 flex justify-self-center">
-        <button id="addTaskBtn" class="border-2 border-black rounded px-4 py-2 bg-green-400 hover:bg-green-300 text-white mb-5">Add New Task</button>
+    <div class="mt-10 flex justify-center">
+        <button id="addTaskBtn" class="border-2 border-black rounded px-4 py-2 bg-green-400 hover:bg-green-300 text-white">Add New Task</button>
     </div>
 
-    <div class="">
-        <div class="flex justify-evenly text-white bg-black text-3xl py-4">
-            <h3>To Do:</h3>
-            <h3>In Progress:</h3>
-            <h3>Completed:</h3>
+    <div class="mt-10 flex justify-evenly gap-4">
+        <div class="w-1/3 bg-gray-300 rounded-lg flex flex-col items-center gap-2 p-4">
+            <h3 class="text-center text-white text-3xl py-4 bg-black w-full">To Do:</h3>
+            <div id="toDoCard" class="flex flex-col gap-2 w-full items-center">To Do Card</div>
         </div>
 
-        <div class="flex justify-evenly bg-white">
-            <div id="toDoCard">To Do Card</div>
-            <div id="inProgressCard">In Progress Card</div>
-            <div id="completedCard">Completed Card</div>
+        <div class="w-1/3 bg-gray-300 rounded-lg flex flex-col items-center gap-2 p-4">
+            <h3 class="text-center text-white text-3xl py-4 bg-black w-full">In Progress:</h3>
+            <div id="inProgressCard" class="flex flex-col gap-2 w-full items-center">In Progress Card</div>
+        </div>
+
+        <div class="w-1/3 bg-gray-300 rounded-lg flex flex-col items-center gap-2 p-4">
+            <h3 class="text-center text-white text-3xl py-4 bg-black w-full">Completed:</h3>
+            <div id="completedCard" class="flex flex-col gap-2 w-full items-center">Completed Card</div>
         </div>
     </div>
 
     <div id="taskPopup" class="hidden fixed inset-0 flex items-center justify-center">
-        <div class="bg-white p-6 rounded-lg w-[50%]">
+        <div class="p-6 rounded-lg w-[30%] bg-white text-black border">
             <h2 class="text-2xl mb-4">Add Task</h2>
             <input type="text" id="taskNameInput" class="w-full p-2 border-2 rounded-lg mb-2" placeholder="Name">
             <input type="text" id="taskDescriptionInput" class="w-full p-2 border-2 rounded-lg mb-4" placeholder="Description">
-            <input type="text" id="taskPriorityInput" class="w-full p-2 border-2 rounded-lg mb-4" placeholder="Priority">
-            <input type="text" id="taskDateInput" class="w-full p-2 border-2 rounded-lg mb-4" placeholder="Due Date">
-            <button id="saveTaskBtn" class="bg-blue-600 px-4 py-2 text-white rounded-lg">Save</button>
-            <button id="cancelTaskBtn" class="bg-gray-300 px-4 py-2 rounded-lg ml-2">Close</button>
+            <select id="taskPriorityInput" class="w-full p-2 border-2 rounded-lg mb-4">
+                <option value="">Select Priority</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <input type="date" id="taskDateInput" class="w-full p-2 border-2 rounded-lg mb-4">
+            <button id="saveTaskBtn" class="bg-blue-600 hover:bg-blue-300 px-4 py-2 text-white rounded-lg">Save</button>
+            <button id="cancelTaskBtn" class="bg-gray-600 hover:bg-gray-300 px-4 py-2 rounded-lg ml-2">Close</button>
         </div>
     </div>
 
     <script type="module" src="./scripts/app.js"></script>
 </body>
+
 </html>
