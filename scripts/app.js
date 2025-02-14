@@ -16,6 +16,8 @@ import {  saveToLocalStorage, getFromLocalStorage, removeFromLocalStorage} from 
   let taskDateInput = document.getElementById("taskDateInput");
   
   let editingTaskIndex = null;
+
+  //vFunctions
   
   addTaskBtn.addEventListener("click", () => {
     editingTaskIndex = null;
@@ -67,6 +69,8 @@ import {  saveToLocalStorage, getFromLocalStorage, removeFromLocalStorage} from 
     taskDateInput.value = "";
     editingTaskIndex = null;
   }
+
+  // Creating Task
   
   function createTaskElement(task, index) {
     let taskItemMain = document.createElement("div");
@@ -96,7 +100,8 @@ import {  saveToLocalStorage, getFromLocalStorage, removeFromLocalStorage} from 
     let buttonContainer = document.createElement("div");
     buttonContainer.className = "flex gap-2 mt-4";
   
-    
+    // Buttons for Tasks
+
     if (!task.status || task.status === 'todo') {
       let startBtn = document.createElement("button");
       startBtn.textContent = "Start";
@@ -117,8 +122,7 @@ import {  saveToLocalStorage, getFromLocalStorage, removeFromLocalStorage} from 
       });
       buttonContainer.appendChild(completeBtn);
     }
-  
-    
+
     let editBtn = document.createElement("button");
     editBtn.textContent = "Edit";
     editBtn.className = "bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 rounded text-sm";
@@ -147,6 +151,8 @@ import {  saveToLocalStorage, getFromLocalStorage, removeFromLocalStorage} from 
   
     return taskItemMain;
   }
+
+  // Moving my tasks
   
   function moveToInProgress(index) {
     let tasks = getFromLocalStorage();
@@ -162,6 +168,8 @@ import {  saveToLocalStorage, getFromLocalStorage, removeFromLocalStorage} from 
     displayTasks();
   }
   
+  // Edit or Delete
+
   function editTask(index) {
     let tasks = getFromLocalStorage();
     let task = tasks[index];
@@ -181,6 +189,8 @@ import {  saveToLocalStorage, getFromLocalStorage, removeFromLocalStorage} from 
     localStorage.setItem('task', JSON.stringify(tasks));
     displayTasks();
   }
+
+  // Show my display
   
   function displayTasks() {
     let tasks = getFromLocalStorage();
