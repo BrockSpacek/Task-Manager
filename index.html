@@ -6,9 +6,39 @@
     <link rel="stylesheet" href="./src/output.css">
     <title>Task Manager</title>
 </head>
-<body>
+<body class="bg-gray-400">
     
-    
+    <h1 class="text-5xl text-center font-bold"> Task Manager </h1>
+
+    <div class="mt-10 flex justify-self-center">
+        <button id="addTaskBtn" class="border-2 rounded px-4 py-2 bg-green-400 text-white mb-5">Add New Task</button>
+    </div>
+
+    <div class="">
+        <div class="flex justify-evenly text-white bg-black text-3xl py-4">
+            <h3>To Do:</h3>
+            <h3>In Progress:</h3>
+            <h3>Completed:</h3>
+        </div>
+
+        <div class="flex justify-evenly bg-white">
+            <div id="toDoCard">To Do Card</div>
+            <div id="inProgressCard">In Progress Card</div>
+            <div id="completedCard">Completed Card</div>
+        </div>
+    </div>
+
+    <div id="taskPopup" class="hidden fixed inset-0 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg w-[50%]">
+            <h2 class="text-2xl mb-4">Add Task</h2>
+            <input type="text" id="taskNameInput" class="w-full p-2 border-2 rounded-lg mb-2" placeholder="Name">
+            <input type="text" id="taskDescriptionInput" class="w-full p-2 border-2 rounded-lg mb-4" placeholder="Description">
+            <input type="text" id="taskPriorityInput" class="w-full p-2 border-2 rounded-lg mb-4" placeholder="Priority">
+            <input type="text" id="taskDateInput" class="w-full p-2 border-2 rounded-lg mb-4" placeholder="Due Date">
+            <button id="saveTaskBtn" class="bg-blue-600 px-4 py-2 text-white rounded-lg">Save</button>
+            <button id="cancelTaskBtn" class="bg-gray-300 px-4 py-2 rounded-lg ml-2">Close</button>
+        </div>
+    </div>
 
     <script type="module" src="./scripts/app.js"></script>
 </body>
